@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import os
 
 plt.rcParams['font.family']='serif'
 plt.rcParams['font.serif']=['Times New Roman'] + plt.rcParams['font.serif']
@@ -9,7 +8,7 @@ plt.rcParams['font.size']=10
 
 cm = 1/2.54
 
-Bubble = np.genfromtxt("results/KellerMiksis_R9.750e-07_fa2.900e+06_pa1.300e+05.txt", delimiter=" ")
+Bubble = np.genfromtxt("RPAR_R9.750e-07_fa2.900e+06_pa1.300e+05.txt", delimiter=" ")
 
 fig1 = plt.figure(figsize=(17*cm,5*cm))
 ax1 = plt.subplot2grid((1,3),(0,0),colspan=1)
@@ -40,9 +39,4 @@ ax1.yaxis.set_label_coords(-0.28, 0.5)
 ax2.yaxis.set_label_coords(-0.25, 0.5)
 ax3.yaxis.set_label_coords(-0.25, 0.5)
 
-folder_path = "plots"
-file_name = "ultrasound_lipidcoated_simple.png"
-if not os.path.exists(folder_path):
-    os.makedirs(folder_path)
-full_path = os.path.join(folder_path, file_name)
-fig1.savefig(full_path, bbox_inches='tight', pad_inches=0.035)
+fig1.savefig('ultrasound_lipidcoated_simple.pdf', bbox_inches='tight',pad_inches=0.035)

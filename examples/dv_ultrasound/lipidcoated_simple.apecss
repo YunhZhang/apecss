@@ -6,7 +6,7 @@
 
 BUBBLE
 InitialRadius 0.975e-6
-RPModel RP
+RPModel RPAR
 PressureAmbient 1.0e5
 END
 
@@ -33,6 +33,5 @@ END
 RESULTS
 Bubble
 OutputFreqRP 2
-OutputPath ./results
 OutputDigits 10
 END

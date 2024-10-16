@@ -5,7 +5,7 @@
 #########################################################
 
 BUBBLE
-InitialRadius 0.975e-6
+InitialRadius 0.8e-5
 RPModel RP
 PressureAmbient 1.0e5
 END
@@ -13,26 +13,23 @@ END
 GAS
 EoS IG
 ReferencePressure 1.0e5
-PolytropicExponent 1.095
+PolytropicExponent 1.33
 END
 
 LIQUID
 ReferenceDensity 1000.0
 ReferenceSoundSpeed 1480.0
-Viscosity 0.001
+Viscosity 0.006
 END
 
 INTERFACE
-SurfaceTensionCoeff 0.073
-LipidCoatingModel Marmottant
-SigmaInit 0.0
-Elasticity 1.0
-DilatationalViscosity 15.0e-9
+SurfaceTensionCoeff 0.072
+LipidCoatingModel None
 END
 
 RESULTS
 Bubble
-OutputFreqRP 2
+OutputFreqRP 3
 OutputPath ./results
 OutputDigits 10
 END

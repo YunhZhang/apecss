@@ -1,0 +1,4 @@
+rm -r results/viscosity*
+rm avgEnergyResults.txt
+rm *.png
+rm *.svg

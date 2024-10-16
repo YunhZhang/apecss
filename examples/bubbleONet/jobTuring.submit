@@ -1,0 +1,14 @@
+#!/bin/sh
+#SBATCH -p short
+#SBATCH -J simulation
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH -t 24:00:00
+#SBATCH -o simulation.o%j
+#SBATCH -e simulation.o%j
+
+##########  PARAMETRIC STUDY APECSS  ##################
+
+./clean
+python3 mainCode.py
+#python3 plotcontours.py
