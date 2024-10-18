@@ -26,22 +26,22 @@ from writeFile import generateInputFile
 # Generate files in different directories
 mainDirectory=os.getcwd()
 nSim=0
-for k in freq:
-    for j in amp:
-        for i in R0:
+for i in range(len(freq)):
+    for j in range(len(amp)):
+        for k in range(len(R0)):
             #Directory
-            Name="freq_"+str(k)+"_amp_"+str(j)+"_radius_"+str(i)
+            Name="freq_"+str(i)+"_amp_"+str(j)+"_radius_"+str(k)
             folderName="results/"+Name
             isdir = os.path.isdir(folderName)
             if isdir==False: os.mkdir(folderName)
 
             #File
             fileName=folderName+"/"+Name+".apecss"
-            generateInputFile(fileName, R0[i], RPmodel, Pambient, EoSgas, Prefgas, PolyExp, Prefliq, Rhoref, SSref, Viscosity, SurfaceTensionCoeff, LipidCoatingModel)
+            generateInputFile(fileName, R0[k], RPmodel, Pambient, EoSgas, Prefgas, PolyExp, Prefliq, Rhoref, SSref, Viscosity, SurfaceTensionCoeff, LipidCoatingModel)
 
             #Execute simulation
             os.chdir(folderName)
-            lineCommand='../../build/ultrasound_apecss -options '+Name+ '.apecss -freq '+str(k)+' -amp '+str(j)+' -tend '+str(tend)
+            lineCommand='../../build/ultrasound_apecss -options '+Name+ '.apecss -freq '+str(freq[i])+' -amp '+str(amp[j])+' -tend '+str(tend)
             #print(lineCommand)
             os.system(lineCommand)
             os.chdir(mainDirectory)
