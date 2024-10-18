@@ -41,7 +41,7 @@ for k in range(len(freq)):
 
             #Execute simulation
             os.chdir(folderName)
-            lineCommand='./../../../../build/ultrasound_apecss -options '+Name+ '.apecss -freq '+str(freq[k])+' -amp '+str(amp[j])+' -tend '+str(tend)
+            lineCommand='.build/ultrasound_apecss -options '+Name+ '.apecss -freq '+str(freq[k])+' -amp '+str(amp[j])+' -tend '+str(tend)
             #print(lineCommand)
             os.system(lineCommand)
             os.chdir(mainDirectory)
