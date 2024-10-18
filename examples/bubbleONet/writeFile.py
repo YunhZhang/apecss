@@ -69,7 +69,8 @@ END\n\
         # Write the results parameters
         file.write('RESULTS\n\
 Bubble\n\
-OutputFreqRP 1\n\
+OutputFreqRP 3\n\
+OutputPath ./results\n\
 OutputDigits 10\n\
 END')
         

@@ -13,13 +13,13 @@ import numpy as np
 
 # User input variables
 #GLOBAL
-freq=1.0e6
-amp=2.0e6
-tend=10*(1/freq)
+freq= np.linspace(20,2000,10) *1000
+amp= np.linspace(1,10,10) *1e5
+tend= 55e-6
 
 #BUBBLE
-R0=np.logspace(-7.5,-4.0,5)
-RPmodel='RPAR'
+R0= np.linspace(1, 100, 11, dtype=int)* 1e-6
+RPmodel= 'RP'
 Pambient=1.0e5
 
 #GAS
@@ -31,8 +31,13 @@ PolyExp=1.4
 Prefliq=Pambient
 Rhoref=1000
 SSref=1475
-Viscosity=np.logspace(-3,-0.35,5)
+Viscosity = 0.006
 
 #INTERFACE
-SurfaceTensionCoeff=0.073
+SurfaceTensionCoeff=0.072
 LipidCoatingModel='None'
+
+#Result
+OutputFreqRP=3
+OutputPath= './results'
+OutputDigits=10
