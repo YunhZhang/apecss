@@ -31,7 +31,7 @@ PolyExp=1.4
 Prefliq=Pambient
 Rhoref=1000
 SSref=1475
-Viscosity = 0.006
+Viscosity = 0.001
 
 #INTERFACE
 SurfaceTensionCoeff=0.072
