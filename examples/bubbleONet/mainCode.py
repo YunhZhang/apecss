@@ -26,9 +26,9 @@ from writeFile import generateInputFile
 # Generate files in different directories
 mainDirectory=os.getcwd()
 nSim=0
-for k in range(len(freq)):
-    for j in range(len(amp)):
-        for i in range(len(R0)):
+for k in freq:
+    for j in amp:
+        for i in R0:
             #Directory
             Name="freq_"+str(k)+"_amp_"+str(j)+"_radius_"+str(i)
             folderName="results/"+Name
@@ -41,7 +41,7 @@ for k in range(len(freq)):
 
             #Execute simulation
             os.chdir(folderName)
-            lineCommand='../../build/ultrasound_apecss -options '+Name+ '.apecss -freq '+str(freq[k])+' -amp '+str(amp[j])+' -tend '+str(tend)
+            lineCommand='../../build/ultrasound_apecss -options '+Name+ '.apecss -freq '+str(k)+' -amp '+str(j)+' -tend '+str(tend)
             #print(lineCommand)
             os.system(lineCommand)
             os.chdir(mainDirectory)
