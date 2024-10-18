@@ -26,26 +26,27 @@ from writeFile import generateInputFile
 # Generate files in different directories
 mainDirectory=os.getcwd()
 nSim=0
-for j in range(len(Viscosity)):
-    for i in range(len(R0)):
-        #Directory
-        Name="viscosity_"+str(j)+"-radius_"+str(i)
-        folderName="results/"+Name
-        isdir = os.path.isdir(folderName)
-        if (isdir==False): os.mkdir(folderName)  
-        
-        #File
-        fileName=folderName+"/"+Name+".apecss"
-        generateInputFile(fileName, R0[i], RPmodel, Pambient, EoSgas, Prefgas, PolyExp, Prefliq, Rhoref, SSref, Viscosity[j], SurfaceTensionCoeff, LipidCoatingModel)
-            
-        #Execute simulation
-        os.chdir(folderName)
-        lineCommand='./../../../../build/ultrasound_apecss -options '+Name+ '.apecss -freq '+str(freq)+' -amp '+str(amp)+' -tend '+str(tend)
-        #print(lineCommand)
-        os.system(lineCommand)
-        os.chdir(mainDirectory)
-        nSim=nSim+1
-        
+for k in range(len(freq)):
+    for j in range(len(amp)):
+        for i in range(len(R0)):
+            #Directory
+            Name="freq_"+str(k)+"_amp_"+str(j)+"_radius_"+str(i)
+            folderName="results/"+Name
+            isdir = os.path.isdir(folderName)
+            if isdir==False: os.mkdir(folderName)
+
+            #File
+            fileName=folderName+"/"+Name+".apecss"
+            generateInputFile(fileName, R0[i], RPmodel, Pambient, EoSgas, Prefgas, PolyExp, Prefliq, Rhoref, SSref, Viscosity, SurfaceTensionCoeff, LipidCoatingModel)
+
+            #Execute simulation
+            os.chdir(folderName)
+            lineCommand='./../../../../build/ultrasound_apecss -options '+Name+ '.apecss -freq '+str(freq[k])+' -amp '+str(amp[j])+' -tend '+str(tend)
+            #print(lineCommand)
+            os.system(lineCommand)
+            os.chdir(mainDirectory)
+            nSim=nSim+1
+
 print(' ')
 print('DONE: simulations ran successfully! Total number of simulations: '+str(nSim))
 
