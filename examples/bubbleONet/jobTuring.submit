@@ -9,6 +9,5 @@
 
 ##########  PARAMETRIC STUDY APECSS  ##################
 
-./clean
 python3 mainCode.py
 #python3 plotcontours.py

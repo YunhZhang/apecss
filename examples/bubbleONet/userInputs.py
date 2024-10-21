@@ -18,7 +18,7 @@ amp= np.linspace(1,10,10) *1e5
 tend= 50e-6
 
 #BUBBLE
-R0= np.linspace(5, 100, 11, dtype=int)* 1e-6
+R0=100e-6 #np.linspace(10, 100, 10, dtype=int)* 1e-6
 RPmodel= 'RP'
 Pambient=1.0e5
 

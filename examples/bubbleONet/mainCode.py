@@ -11,7 +11,7 @@ Created on Mon Apr  1 12:12:32 2024
 # Parametric study: VISCOSITY vs INITIAL BUBBLE RADIUS
 
 # Date: 4/1/2024
-
+    
 # Import user input values
 import os
 import time
@@ -26,26 +26,26 @@ from writeFile import generateInputFile
 # Generate files in different directories
 mainDirectory=os.getcwd()
 nSim=0
-for i in range(len(freq)):
-    for j in range(len(amp)):
-        for k in range(len(R0)):
+for i in freq:
+    for j in amp:
+       # for k in R0:
             #Directory
-            Name="freq_"+str(i)+"_amp_"+str(j)+"_radius_"+str(k)
-            folderName="results/"+Name
-            isdir = os.path.isdir(folderName)
-            if isdir==False: os.mkdir(folderName)
+        Name="freq_"+str(i)+"/amp_"+str(j)+"/radius_"+str(R0)
+        folderName="resultsep/"+Name
+        isdir = os.path.isdir(folderName)
+        if isdir==False: os.mkdir(folderName)
 
             #File
-            fileName=folderName+"/"+Name+".apecss"
-            generateInputFile(fileName, R0[k], RPmodel, Pambient, EoSgas, Prefgas, PolyExp, Prefliq, Rhoref, SSref, Viscosity, SurfaceTensionCoeff, LipidCoatingModel)
+        fileName=folderName+"/"+Name+".apecss"
+        generateInputFile(fileName, R0, RPmodel, Pambient, EoSgas, Prefgas, PolyExp, Prefliq, Rhoref, SSref, Viscosity, SurfaceTensionCoeff, LipidCoatingModel)
 
             #Execute simulation
-            os.chdir(folderName)
-            lineCommand='../../build/ultrasound_apecss -options '+Name+ '.apecss -freq '+str(freq[i])+' -amp '+str(amp[j])+' -tend '+str(tend)
+        os.chdir(folderName)
+        lineCommand='../../build/ultrasound_apecss -options '+Name+ '.apecss -freq '+str(i)+' -amp '+str(j)+' -tend '+str(tend)
             #print(lineCommand)
-            os.system(lineCommand)
-            os.chdir(mainDirectory)
-            nSim=nSim+1
+        os.system(lineCommand)
+        os.chdir(mainDirectory)
+        nSim=nSim+1
 
 print(' ')
 print('DONE: simulations ran successfully! Total number of simulations: '+str(nSim))

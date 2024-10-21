@@ -34,8 +34,8 @@ Dimensionality Sphere\n\
 END\n\
 \n' % (R0, RPmodel, Pambient))
 
-        # if R0 < 10**(-5.75):
-        file.write('ODESOLVER\n\
+        if R0 < 5e-6:  # 10**(-5.75):
+            file.write('ODESOLVER\n\
 maxTimeStep 5e-9\n\
 minTimeStep 1e-20\n\
 END\n\
