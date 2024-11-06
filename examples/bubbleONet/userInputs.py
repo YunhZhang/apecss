@@ -15,10 +15,10 @@ import numpy as np
 #GLOBAL
 freq= np.linspace(20,2000,10) *1000
 amp= np.linspace(1,10,10) *1e5
-tend= 50e-6
+tend= 60e-6
 
 #BUBBLE
-R0=100e-6 #np.linspace(10, 100, 10, dtype=int)* 1e-6
+R0 = 60e-6 #np.linspace(10, 100, 10, dtype=int)* 1e-6
 RPmodel= 'RP'
 Pambient=1.0e5
 
