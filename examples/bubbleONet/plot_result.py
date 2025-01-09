@@ -9,7 +9,7 @@ plt.rcParams['font.size']=10
 
 cm = 1/2.54
 
-Bubble = np.genfromtxt("results/freq_0_amp_0_radius_0/results/RP_R5.000e-05_fa1.755e+06_pa1.000e+05.txt", delimiter=" ")
+Bubble = np.genfromtxt("results/freq_0_amp_0_radius_0/results/RP_R5.000e-05_fa4.400e+05_pa1.000e+05.txt", delimiter=" ")
 
 # fig1 = plt.figure(figsize=(30*cm,30*cm))
 fig1, ax1 = plt.subplots(figsize=(20,10)) #(25*cm, 15*cm) 
@@ -46,7 +46,7 @@ ax1.plot(Bubble[:, 1]*1e6, Bubble[:, 3]*1e6, linestyle='solid', linewidth=1,colo
 # ax3.yaxis.set_label_coords(-0.25, 0.5)
 
 folder_path = "plots"
-file_name = "1.755e+06.png"
+file_name = "4.400e+05.png"
 if not os.path.exists(folder_path):
     os.makedirs(folder_path)
 full_path = os.path.join(folder_path, file_name)

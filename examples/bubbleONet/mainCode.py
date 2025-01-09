@@ -27,25 +27,25 @@ from writeFile import generateInputFile
 mainDirectory=os.getcwd()
 nSim=0
 for i in freq:
-    for j in amp:
+    # for j in amp:
        # for k in R0:
             #Directory
-        Name="freq_"+str(i)+"_amp_"+str(j)+"_radius_"+str(R0)
-        folderName="results_R50/"+Name
-        isdir = os.path.isdir(folderName)
-        if isdir==False: os.mkdir(folderName)
+    Name="freq_"+str(i)+"_amp_"+str(amp)+"_radius_"+str(R0)
+    folderName="results_R50/"+Name
+    isdir = os.path.isdir(folderName)
+    if isdir==False: os.mkdir(folderName)
 
-            #File
-        fileName=folderName+"/"+Name+".apecss"
-        generateInputFile(fileName, R0, RPmodel, Pambient, EoSgas, Prefgas, PolyExp, Prefliq, Rhoref, SSref, Viscosity, SurfaceTensionCoeff, LipidCoatingModel)
+        #File
+    fileName=folderName+"/"+Name+".apecss"
+    generateInputFile(fileName, R0, RPmodel, Pambient, EoSgas, Prefgas, PolyExp, Prefliq, Rhoref, SSref, Viscosity, SurfaceTensionCoeff, LipidCoatingModel)
 
-            #Execute simulation
-        os.chdir(folderName)
-        lineCommand='../../build/ultrasound_apecss -options '+Name+ '.apecss -freq '+str(i)+' -amp '+str(j)+' -tend '+str(tend)
-            #print(lineCommand)
-        os.system(lineCommand)
-        os.chdir(mainDirectory)
-        nSim=nSim+1
+        #Execute simulation
+    os.chdir(folderName)
+    lineCommand='../../build/ultrasound_apecss -options '+Name+ '.apecss -freq '+str(i)+' -amp '+str(amp)+' -tend '+str(tend)
+        #print(lineCommand)
+    os.system(lineCommand)
+    os.chdir(mainDirectory)
+    nSim=nSim+1
 
 print(' ')
 print('DONE: simulations ran successfully! Total number of simulations: '+str(nSim))
