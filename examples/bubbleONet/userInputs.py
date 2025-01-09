@@ -15,7 +15,7 @@ import numpy as np
 #GLOBAL
 freq= np.linspace(20,2000,500) *1000
 #freq = np.arange(1000,2000,50)*1000
-amp= np.linspace(1,10,50) *1e5
+amp= 1e5 #np.linspace(1,10,50) *1e5
 tend= 60e-6
 
 #BUBBLE
