@@ -13,7 +13,8 @@ import numpy as np
 
 # User input variables
 #GLOBAL
-freq= np.linspace(20,2000,50) *1000
+freq= np.linspace(20,2000,500) *1000
+#freq = np.arange(1000,2000,50)*1000
 amp= np.linspace(1,10,50) *1e5
 tend= 60e-6
 
@@ -39,5 +40,5 @@ LipidCoatingModel='None'
 
 #Result
 OutputFreqRP=3
-OutputPath= './results'
+OutputPath= './results_R50'
 OutputDigits=10

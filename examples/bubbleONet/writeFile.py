@@ -70,7 +70,7 @@ END\n\
         file.write('RESULTS\n\
 Bubble\n\
 OutputFreqRP 3\n\
-OutputPath ./results\n\
+OutputPath ./results_R50\n\
 OutputDigits 10\n\
 END')
         
