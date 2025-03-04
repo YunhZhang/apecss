@@ -34,7 +34,7 @@ Dimensionality Sphere\n\
 END\n\
 \n' % (R0, RPmodel, Pambient))
 
-        if R0 < 6e-6:  # 10**(-5.75):
+        if R0 < 6e-5:  # 10**(-5.75):
             file.write('ODESOLVER\n\
 maxTimeStep 5e-9\n\
 minTimeStep 1e-20\n\
@@ -69,9 +69,9 @@ END\n\
         # Write the results parameters
         file.write('RESULTS\n\
 Bubble\n\
-OutputFreqRP 5\n\
-OutputPath ./results_R50\n\
-OutputDigits 10\n\
+OutputFreqRP 10\n\
+OutputPath ./results\n\
+OutputDigits 25\n\
 END')
         
     # The file is automatically saved and closed after this block

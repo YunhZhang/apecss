@@ -13,9 +13,9 @@ import numpy as np
 
 # User input variables
 #GLOBAL
-freq= np.linspace(500,2000,300) *1000
-amp= np.linspace(1,10,10) *1e5
-tend= 60e-6
+freq= np.linspace(20,80,60) *1000
+amp= np.linspace(1,10,50) *1e5
+tend= 60e-5
 
 #BUBBLE
 R0 = 50e-6 #np.linspace(10, 100, 10, dtype=int)* 1e-6
@@ -38,6 +38,6 @@ SurfaceTensionCoeff=0.072
 LipidCoatingModel='None'
 
 #Result
-OutputFreqRP=5
-OutputPath= './results_R50'
-OutputDigits=10
+OutputFreqRP=10
+OutputPath= './results'
+OutputDigits=25
