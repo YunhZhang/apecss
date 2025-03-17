@@ -31,7 +31,7 @@ for i in freq:
        # for k in R0:
             #Directory
         Name="freq_"+str(i)+"_amp_"+str(j)+"_radius_"+str(R0)
-        folderName="RKresults/R50_short/nocollapse/"+Name
+        folderName="KMresults/R50_short/full/"+Name
         isdir = os.path.isdir(folderName)
         if isdir==False: os.mkdir(folderName)
 

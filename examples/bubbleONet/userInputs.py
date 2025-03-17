@@ -13,13 +13,13 @@ import numpy as np
 
 # User input variables
 #GLOBAL
-freq= np.linspace(200,2000,180) *1000
-amp= np.linspace(1,10,20) *1e5
+freq= np.linspace(20,2000,3000) *1000
+amp= np.linspace(1,10,10) *1e5
 tend= 6e-5
 
 #BUBBLE
 R0 = 50e-6 #np.linspace(10, 100, 10, dtype=int)* 1e-6
-RPmodel= 'RP'
+RPmodel= 'KM'
 Pambient=1.0e5
 
 #GAS

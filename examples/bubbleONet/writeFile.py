@@ -10,7 +10,7 @@ Created on Mon Apr  1 11:14:03 2024
 
 # Date: 4/1/2024
 
-def generateInputFile(fileName, R0, RPmodel, Pambient, EoSgas, Prefgas, PolyExp, Prefliq, Rhoref, SSref, Viscosity, SurfaceTensionCoeff, LipidCoatingModel):
+def generateInputFile(fileName, R0, RPmodel, Pambient, EoSgas, Prefgas, PolyExp, Prefliq, Rhoref, SSref, Viscosity, SurfaceTensionCoeff,LipidCoatingModel):
     
     # Open the apecss input file
     with open(fileName, "w") as file:
@@ -71,7 +71,7 @@ END\n\
 Bubble\n\
 OutputFreqRP 3\n\
 OutputPath ./results\n\
-OutputDigits 10\n\
+OutputDigits 25\n\
 END')
         
     # The file is automatically saved and closed after this block
