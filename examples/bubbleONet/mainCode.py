@@ -31,7 +31,7 @@ for i in freq:
        # for k in R0:
             #Directory
         Name="freq_"+str(i)+"_amp_"+str(j)+"_radius_"+str(R0)
-        folderName="results_R50_collapse/"+Name
+        folderName="RKresults/R50_short/nocollapse/"+Name
         isdir = os.path.isdir(folderName)
         if isdir==False: os.mkdir(folderName)
 
@@ -41,7 +41,7 @@ for i in freq:
 
             #Execute simulation
         os.chdir(folderName)
-        lineCommand='../../build/ultrasound_apecss -options '+Name+ '.apecss -freq '+str(i)+' -amp '+str(j)+' -tend '+str(tend)
+        lineCommand='../../../../build/ultrasound_apecss -options '+Name+ '.apecss -freq '+str(i)+' -amp '+str(j)+' -tend '+str(tend)
             #print(lineCommand)
         os.system(lineCommand)
         os.chdir(mainDirectory)

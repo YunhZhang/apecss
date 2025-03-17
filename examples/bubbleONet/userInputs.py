@@ -13,9 +13,9 @@ import numpy as np
 
 # User input variables
 #GLOBAL
-freq= np.linspace(20,80,60) *1000
-amp= np.linspace(1,10,50) *1e5
-tend= 60e-5
+freq= np.linspace(200,2000,180) *1000
+amp= np.linspace(1,10,20) *1e5
+tend= 6e-5
 
 #BUBBLE
 R0 = 50e-6 #np.linspace(10, 100, 10, dtype=int)* 1e-6

@@ -69,9 +69,9 @@ END\n\
         # Write the results parameters
         file.write('RESULTS\n\
 Bubble\n\
-OutputFreqRP 10\n\
+OutputFreqRP 3\n\
 OutputPath ./results\n\
-OutputDigits 25\n\
+OutputDigits 10\n\
 END')
         
     # The file is automatically saved and closed after this block
