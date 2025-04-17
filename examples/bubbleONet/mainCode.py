@@ -27,17 +27,17 @@ from writeFile import generateInputFile
 mainDirectory=os.getcwd()
 nSim=0
 for i in freq:
-    for j in amp:
-       for k in R0:
-            #Directory
-        Name="freq_"+str(i)+"_amp_"+str(j)+"_radius_"+str(R0)
-        folderName="KMresults/multiR/"+Name
+   for j in amp:
+      for k in R0:
+           #Directory
+        Name="amp_"+str(j)+"_freq_"+str(i)+"_radius_"+str(k)
+        folderName=f"KMresults/multiR/R0_{k}/"+Name
         isdir = os.path.isdir(folderName)
         if isdir==False: os.mkdir(folderName)
 
             #File
         fileName=folderName+"/"+Name+".apecss"
-        generateInputFile(fileName, R0, RPmodel, Pambient, EoSgas, Prefgas, PolyExp, Prefliq, Rhoref, SSref, Viscosity, SurfaceTensionCoeff, LipidCoatingModel)
+        generateInputFile(fileName, k, RPmodel, Pambient, EoSgas, Prefgas, PolyExp, Prefliq, Rhoref, SSref, Viscosity, SurfaceTensionCoeff, LipidCoatingModel)
 
             #Execute simulation
         os.chdir(folderName)
