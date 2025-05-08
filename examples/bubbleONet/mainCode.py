@@ -32,7 +32,7 @@ for i in freq:
            #Directory
            Name="amp_"+str(j)+"_freq_"+str(i)+"_radius_"+str(k)
            R0Name=f"KMresults/multiR/R0_{k}"
-           os.mkdir(R0Name,exist_ok=True)
+           os.makedirs(R0Name,exist_ok=True)
            folderName = os.path.join(R0Name, Name)
            isdir = os.path.isdir(folderName)
            if isdir==False: os.mkdir(folderName)

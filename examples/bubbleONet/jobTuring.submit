@@ -8,6 +8,8 @@
 #SBATCH -e simulation.o%j
 
 ##########  PARAMETRIC STUDY APECSS  ##################
+module load python
+module load py-numpy
 
 python3 mainCode.py
 #python3 plotcontours.py
